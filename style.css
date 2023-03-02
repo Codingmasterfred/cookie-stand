@@ -1,0 +1,61 @@
+
+@import url('https://fonts.googleapis.com/css2?family=Tilt+Neon&display=swap');
+
+*{
+
+    margin:0;
+    padding:0;
+    box-sizing: border-box;
+}
+body{
+    background:aqua;
+  
+}
+
+#Cookie-Locations{
+    display:flex;
+    flex-direction: column;
+    border: 2px solid orange;
+}
+
+ul{
+    display:flex;
+    justify-content: space-evenly;
+    border: 5px solid black;
+    background:orange;
+}
+
+#Cookie-Locations h1{
+    text-align: center;
+    font-family: Tilt Neon;
+    color: orange;
+    background-color: aqua;
+    font-size:55px;
+    text-decoration: underline;
+}
+li{
+    list-style-type:none;
+    text-decoration: underline;
+    font-size:50px;
+}
+#content{
+    font-family:Georgia, Times;
+    color:rgb(0, 255, 255);
+    background:rgb(214, 100, 6);
+    height:460px;
+    width:100%;
+    border:10px solid rgb(0, 255, 255);
+    display:flex;
+    flex-direction: column;
+    align-items: center;
+}
+#content p {
+    background:rgb(214, 100, 6);
+    text-align:center;
+    padding:10px;
+    border: 10px solid black;
+    margin-top:40px;
+}
+#content img{
+   border:5px solid orange;
+}
