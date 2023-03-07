@@ -7,8 +7,15 @@
     padding:0;
     box-sizing: border-box;
 }
+
+html{display:flex;}
+
 body{
     background:aqua;
+    width:1200px;
+    display:flex;
+    flex-direction: column;
+    align-items: center;
     
   
 }
@@ -16,7 +23,10 @@ body{
 #Cookie-Locations{
     display:flex;
     flex-direction: column;
+    align-self: center;
     border: 2px solid orange;
+    width:100%;
+
 }
 
 ul{
@@ -43,7 +53,7 @@ li{
     font-family:Georgia, Times;
     color:rgb(0, 255, 255);
     background:rgb(214, 100, 6);
-    height:460px;
+    height:100%;
     width:98%;
     border:10px solid rgb(0, 255, 255);
     display:flex;
@@ -55,16 +65,33 @@ li{
     text-align:center;
     padding:10px;
     border: 10px solid black;
-    margin-top:40px;
+    
 }
 #content img{
    border:5px solid orange;
+   width:100%;
+   height: 80%;
 }
 #Footer{
     width:100%;
+    height:30px;
+    margin-bottom: 10px;
     display:flex;
     justify-content: space-evenly;
    border:1px solid black;
+   background-color:orange;
+   margin-bottom: 10px;
 
 }
-span{font-size:30px;}
+span{font-size:20px;
+color:black;}
+
+a{color:orange;
+background-color: black;
+font-size: larger;}
+
+
+#pics{
+    display:flex;
+    
+}

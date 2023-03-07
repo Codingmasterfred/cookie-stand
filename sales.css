@@ -7,6 +7,12 @@ table, td, th {
     border: 3px solid black;
     padding:3px;
 }
+body{background-color: orange;
+}
+a{
+    font-size:50px;
+    color:black;
+}
 
 /* body{
     justify-content: center;
