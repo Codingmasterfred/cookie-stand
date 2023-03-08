@@ -3,6 +3,10 @@
     padding:0;
     box-sizing: border-box;
 }
+body{
+    display:flex;
+    
+}
 table, td, th {
     border: 3px solid black;
     padding:3px;
@@ -13,6 +17,7 @@ a{
     font-size:50px;
     color:black;
 }
+
 
 /* body{
     justify-content: center;
