@@ -128,27 +128,21 @@ Paris.render()
                 let inputMin = document.getElementById("min").value
                 let inputMax = document.getElementById("max").value
                 let inputAvg = document.getElementById("avg").value
-                let Memphis = new cookiesStandLocation(inputMin,inputMax,inputAvg,inputLocation)
-                let table = document.getElementById("jsTbl");
-                let newRow = document.createElement("tr");
-                let localeTD = document.createElement("td");
-                localeTD.innerHTML = Memphis.location;
-                newRow.append(localeTD);
-                for (let i = 0; i < Memphis.hourDemo.length; i++) {
-                    let newEl = document.createElement("td");
-                    console.log(Memphis.cookiesPerHour)
-                    newEl.innerHTML = Memphis.cookiesPerHour[i];
-                    newRow.append(newEl);
-                }
-                let sumTotal = document.createElement("td");
-                sumTotal.innerHTML = Memphis.cookiesPerHour.reduce((acc, val) => acc + val, 0);
-                newRow.append(sumTotal);
-                table.append(newRow);
+                const Memphis = new cookiesStandLocation(inputMin,inputMax,inputAvg,inputLocation)
+                let ToTalTD = document.getElementById("TotalOfTotalHours")
+                let total = parseInt(ToTalTD.innerHTML)
+                total += Memphis.cookiesPerHour 
+                Memphis.getCookie(total)
+                for(let i = 0; i < Memphis.cookiesPerHour; i++){
+                    
 
+                }
+                // total =  cookiesStandLocation.stand.render(sumTotal)
+                Memphis.render()
                 
 
             });
-      
+            
             
             
             
@@ -156,23 +150,27 @@ Paris.render()
             // let NewTR = document.createElement("tr")
             
             // table.append(NewTR);
+let tFooter = document.createElement("tfoot")
+let NewTR = document.createElement("tr")
+let TotalTD = document.createElement("td");
+TotalTD.innerHTML = "total an hour"
+NewTR.append(TotalTD)
 
-// let TotalTD = document.createElement("td");
-// TotalTD.innerHTML = "total an hour"
-// NewTR.append(TotalTD)
-
-// let sum2 = 0;
-// for (let i = 0; i < HourOfOperation.length; i++) {
-//     let HourTotal = Seattle.cookiesPerHour[i] + Tokyo.cookiesPerHour[i] + Dubai.cookiesPerHour[i] + Paris.cookiesPerHour[i] + Lima.cookiesPerHour[i];
-//     // arrayC.push(HourTotal)
-//     let HourTotalTD = document.createElement("td");
-//     HourTotalTD.innerHTML = HourTotal
-//     NewTR.append(HourTotalTD)
-//     sum2 += HourTotal
-// }
-// let TotalOfTotalHours = document.createElement("td")
-// TotalOfTotalHours.innerHTML += sum2;
-// NewTR.append(TotalOfTotalHours)
+let sum2 = 0;
+for (let i = 0; i < HourOfOperation.length; i++) {
+    let HourTotal = Seattle.cookiesPerHour[i] + Tokyo.cookiesPerHour[i] + Dubai.cookiesPerHour[i] + Paris.cookiesPerHour[i] + Lima.cookiesPerHour[i]  ;
+    // arrayC.push(HourTotal)
+    let HourTotalTD = document.createElement("td");
+    HourTotalTD.innerHTML = HourTotal
+    NewTR.append(HourTotalTD)
+    sum2 += HourTotal
+}
+let TotalOfTotalHours = document.createElement("td")
+TotalOfTotalHours.innerHTML += sum2;
+TotalOfTotalHours.id = "TotalOfTotalHours"
+NewTR.append(TotalOfTotalHours)
+tFooter.append(NewTR)
+table.append(tFooter)
 
 
 // function CreateRows() {
