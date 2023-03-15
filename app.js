@@ -47,6 +47,7 @@ function cookiesStandLocation(min, max, avg, location) {
             sum += this.cookiesPerHour[i];
         }
         let sumTotal = document.createElement("td");
+        this.totalSales = sum;
         sumTotal.innerHTML += sum;
         trDemo.append(sumTotal);
 
@@ -131,15 +132,32 @@ Paris.render()
                 const Memphis = new cookiesStandLocation(inputMin,inputMax,inputAvg,inputLocation)
                 let ToTalTD = document.getElementById("TotalOfTotalHours")
                 let total = parseInt(ToTalTD.innerHTML)
-                total += Memphis.cookiesPerHour 
-                Memphis.getCookie(total)
-                for(let i = 0; i < Memphis.cookiesPerHour; i++){
-                    
-
-                }
+                // let allCookiesSoldForMemphs = 0 
+                
+                // total += allCookiesSoldForMemphs
+                // Memphis.getCookie(total)
                 // total =  cookiesStandLocation.stand.render(sumTotal)
                 Memphis.render()
-                
+                total += Memphis.totalSales
+                ToTalTD.innerHTML = total
+                   
+                   let TrRow = document.getElementsByClassName("TotalTr")[0].children
+                   for(let i = 0; i < Memphis.cookiesPerHour.length; i++){
+                    let td = TrRow[i+1]
+                    td.innerHTML =  parseInt(td.innerHTML) + Memphis.cookiesPerHour[i]
+                   console.log(TrRow, "TrRow")
+                   }
+                // for(let i = 0; i < HourOfOperation.length; i++){
+                //     let HourTotal = document.createElement("td")
+                //     HourTotal.id = "TotalHourEachColumn"
+                //     HourTotal += Memphis.cookiesPerHour[i]
+                //     let HourTotalTD = document.createElement("td");
+                //     HourTotalTD.innerHTML = HourTotal
+                //     NewTR.append(HourTotalTD)
+                //     sum2 += HourTotal
+
+                    
+                // }
 
             });
             
@@ -150,8 +168,9 @@ Paris.render()
             // let NewTR = document.createElement("tr")
             
             // table.append(NewTR);
-let tFooter = document.createElement("tfoot")
+let tFooter = document.getElementById("TFoot")
 let NewTR = document.createElement("tr")
+NewTR.classList.add("TotalTr")
 let TotalTD = document.createElement("td");
 TotalTD.innerHTML = "total an hour"
 NewTR.append(TotalTD)
@@ -162,6 +181,7 @@ for (let i = 0; i < HourOfOperation.length; i++) {
     // arrayC.push(HourTotal)
     let HourTotalTD = document.createElement("td");
     HourTotalTD.innerHTML = HourTotal
+    HourTotal += document.getElementById("TotalHourEachColumn")
     NewTR.append(HourTotalTD)
     sum2 += HourTotal
 }
@@ -170,7 +190,7 @@ TotalOfTotalHours.innerHTML += sum2;
 TotalOfTotalHours.id = "TotalOfTotalHours"
 NewTR.append(TotalOfTotalHours)
 tFooter.append(NewTR)
-table.append(tFooter)
+// table.append(tFooter)
 
 
 // function CreateRows() {
